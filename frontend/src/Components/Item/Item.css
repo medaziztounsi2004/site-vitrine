@@ -1,0 +1,99 @@
+
+.item {
+    width: 320px; /* Increase width for better display on computer screens */
+    padding: 20px; 
+    /* Add more space around the item */
+}
+
+.item img {
+    width: 100%; /* Make the image fill its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add border radius for a rounded look */
+}
+
+.item p {
+    margin: 12px 0; /* Increase margin for better spacing */
+    max-width: 100%; /* Allow text to wrap within the container */
+    word-wrap: break-word; /* Ensure text breaks to prevent overflow */
+    font-size: 16px; /* Increase font size for better readability */
+}
+
+.item-prices {
+    display: flex;
+    justify-content: space-between; /* Spread out prices evenly */
+    align-items: center; /* Align prices vertically */
+    margin-top: 10px; /* Add some space between prices and description */
+}
+
+.item-price-new {
+    color: #374151;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.item-price-old {
+    color: #8c8c8c;
+    font-size: 16px; /* Slightly smaller font size for old price */
+    font-weight: 500;
+    text-decoration: line-through;
+}
+
+.item:hover {
+    transform: scale(1.05); /* Increase scale on hover for better interaction */
+    transition: transform 0.6s; /* Add transition effect for smooth scaling */
+}
+@media(max-width:1280px){
+    .item{
+        width: 220px;
+        font-size: 14px;
+    }
+    .item img{
+        width: 220px;
+    }
+ 
+}
+@media(max-width:1024px){
+    .item{
+        width: 170px;
+        font-size: 13px;
+    }
+    .item p {
+        max-width: 170px;
+    }
+    .item img{
+        width: 170px;
+    }
+    .item-price-new, .item-price-old {
+        font-size: 16px; /* Smaller font size for smaller screens */
+    }
+}
+@media(max-width:800px){
+    .item{
+        width: 120px;
+        font-size: 12px;
+    }
+    .item img{
+        width: 120px;
+    }
+    .item-price-new, .item-price-old {
+        font-size: 14px; /* Even smaller font size for smaller screens */
+    }
+    .item p {
+        max-width: 120px;
+    }
+}
+
+    @media(max-width:500px){
+    .item{
+        width: 160px;
+    }
+    .item img{
+        width: 160px;
+    }
+    .item p {
+        max-width: 160px;
+    }
+    .item-price-new, .item-price-old {
+        font-size: 12px; /* Smallest font size for very small screens */
+    }
+}
