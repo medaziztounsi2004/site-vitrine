@@ -1,5 +1,5 @@
 import React, { useState, useContext, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContext';
 import './SearchBar.css';
 
@@ -10,6 +10,7 @@ const SearchBar = () => {
     const { all_product } = useContext(ShopContext);
     const searchInputRef = useRef(null);
     const searchContainerRef = useRef(null);
+    const navigate = useNavigate();
 
     // Filter products based on search term
     useEffect(() => {
@@ -53,6 +54,11 @@ const SearchBar = () => {
     // Handle keyboard events
     const handleKeyDown = (e) => {
         if (e.key === 'Escape') {
+            setIsOpen(false);
+            setSearchTerm('');
+        } else if (e.key === 'Enter' && searchResults.length > 0) {
+            // Navigate to first result on Enter
+            navigate(`/product/${searchResults[0].id}`);
             setIsOpen(false);
             setSearchTerm('');
         }

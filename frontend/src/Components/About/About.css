@@ -72,8 +72,9 @@
     font-family: var(--font-heading);
     font-size: 36px;
     font-weight: 600;
-    color: var(--sage-green);
+    color: #5C7C5C;
     margin-bottom: 5px;
+    text-shadow: 0 0 20px rgba(92, 124, 92, 0.3);
 }
 
 .stat-label {

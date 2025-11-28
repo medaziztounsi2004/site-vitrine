@@ -20,7 +20,20 @@
 }
 
 .feature-icon {
-    font-size: 28px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #E8F0E8;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.feature-icon svg {
+    width: 20px;
+    height: 20px;
+    color: #5C7C5C;
 }
 
 .feature-text h4 {
@@ -60,7 +73,13 @@
     }
 
     .feature-icon {
-        font-size: 24px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .feature-icon svg {
+        width: 18px;
+        height: 18px;
     }
 
     .feature-text h4 {
