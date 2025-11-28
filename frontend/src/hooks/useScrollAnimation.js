@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 
 const useScrollAnimation = () => {
   useEffect(() => {
+    const elements = document.querySelectorAll('.fade-in, .slide-left, .slide-right');
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -13,10 +15,12 @@ const useScrollAnimation = () => {
       { threshold: 0.1 }
     );
 
-    const elements = document.querySelectorAll('.fade-in, .slide-left, .slide-right');
     elements.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+      observer.disconnect();
+    };
   }, []);
 };
 
