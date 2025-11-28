@@ -6,6 +6,11 @@ import Item from '../Item/Item';
 const RelatedProducts = ({ category, currentProductId }) => {
     const { all_product } = useContext(ShopContext);
     
+    // Handle case where products are not yet loaded
+    if (!all_product || all_product.length === 0) {
+        return null;
+    }
+    
     // Filter products by same category and exclude current product
     const relatedProducts = all_product
         .filter(p => p.category === category && p.id !== currentProductId)

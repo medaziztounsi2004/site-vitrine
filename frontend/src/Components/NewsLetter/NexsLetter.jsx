@@ -22,6 +22,7 @@ const NewsLetter = () => {
                         placeholder='Enter your email' 
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        required
                     />
                     <button type="submit">Subscribe</button>
                 </form>
