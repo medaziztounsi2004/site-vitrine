@@ -24,7 +24,7 @@ const Rating = ({ rating, size = 'medium', showCount = false, count = 0, interac
                     <svg 
                         key={star} 
                         viewBox="0 0 24 24" 
-                        fill={star <= rating ? "var(--gold)" : "#ddd"}
+                        fill={star <= rating ? "var(--gold)" : "var(--stone)"}
                         onClick={() => handleClick(star)}
                         onKeyDown={(e) => handleKeyDown(e, star)}
                         tabIndex={interactive ? 0 : -1}

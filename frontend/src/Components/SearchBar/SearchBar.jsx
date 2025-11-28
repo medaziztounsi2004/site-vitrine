@@ -19,6 +19,7 @@ const SearchBar = () => {
         }
 
         const filtered = all_product.filter(product => {
+            if (!product.name || !product.category) return false;
             const searchLower = searchTerm.toLowerCase();
             return (
                 product.name.toLowerCase().includes(searchLower) ||

@@ -363,21 +363,26 @@ app.post('/reviews', async (req, res) => {
         const { product_id, user_name, rating, review_text } = req.body;
 
         // Validate input
-        if (!product_id || !user_name || !rating || !review_text) {
-            return res.status(400).json({ error: 'All fields are required' });
+        if (product_id === undefined || product_id === null) {
+            return res.status(400).json({ error: 'Product ID is required' });
         }
-
-        if (rating < 1 || rating > 5) {
-            return res.status(400).json({ error: 'Rating must be between 1 and 5' });
+        if (!user_name || typeof user_name !== 'string' || !user_name.trim()) {
+            return res.status(400).json({ error: 'User name is required' });
+        }
+        if (typeof rating !== 'number' || rating < 1 || rating > 5) {
+            return res.status(400).json({ error: 'Rating must be a number between 1 and 5' });
+        }
+        if (!review_text || typeof review_text !== 'string' || !review_text.trim()) {
+            return res.status(400).json({ error: 'Review text is required' });
         }
 
         const { data: newReview, error } = await supabase
             .from('reviews')
             .insert([{
                 product_id,
-                user_name,
+                user_name: user_name.trim(),
                 rating,
-                review_text
+                review_text: review_text.trim()
             }])
             .select()
             .single();

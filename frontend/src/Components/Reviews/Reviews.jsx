@@ -42,6 +42,11 @@ const Reviews = ({ productId }) => {
             return;
         }
 
+        if (!newReview.rating || newReview.rating < 1 || newReview.rating > 5) {
+            setError('Please select a rating between 1 and 5 stars');
+            return;
+        }
+
         setSubmitting(true);
         setError('');
 
