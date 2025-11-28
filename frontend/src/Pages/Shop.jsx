@@ -1,6 +1,5 @@
 import React from 'react';
 import Hero from '../Components/Hero/Hero';
-import Features from '../Components/Features/Features';
 import CategoryBanner from '../Components/CategoryBanner/CategoryBanner';
 import Popular from '../Components/Popular/Popular';
 import About from '../Components/About/About';
@@ -15,7 +14,6 @@ const Shop = () => {
     return (
         <div>
             <Hero/>
-            <Features/>
             <CategoryBanner/>
             <Popular/>
             <About/>
