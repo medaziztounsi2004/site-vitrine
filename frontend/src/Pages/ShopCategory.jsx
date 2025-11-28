@@ -2,6 +2,7 @@ import React, {useContext, useState, useMemo} from 'react';
 import './CSS/ShopCategory.css'
 import { ShopContext } from '../Context/ShopContext';
 import Item from '../Components/Item/Item';
+import { sortOptions } from '../constants/productConstants';
 
 const categoryTitles = {
     living: 'Living Room',
@@ -16,14 +17,6 @@ const categoryDescriptions = {
     dining: 'Elevate your dining experience with elegant pieces',
     decor: 'Add the finishing touches that make a house a home'
 };
-
-const sortOptions = [
-    { value: 'featured', label: 'Featured' },
-    { value: 'price-low-high', label: 'Price: Low to High' },
-    { value: 'price-high-low', label: 'Price: High to Low' },
-    { value: 'newest', label: 'Newest' },
-    { value: 'name-az', label: 'Name: A-Z' }
-];
 
 const ShopCategory = (props) => {
     const {all_product} = useContext(ShopContext);

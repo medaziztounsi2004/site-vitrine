@@ -27,7 +27,7 @@ const CounterNumber = ({ end, suffix = '', duration = 2000 }) => {
         if (!hasStarted) return;
 
         let startTime;
-        const endValue = parseInt(end);
+        const endValue = parseInt(end, 10);
         
         const animate = (currentTime) => {
             if (!startTime) startTime = currentTime;

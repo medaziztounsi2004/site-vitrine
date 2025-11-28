@@ -2,22 +2,7 @@ import React, { useContext, useState, useMemo } from 'react';
 import './CSS/ShopAll.css';
 import { ShopContext } from '../Context/ShopContext';
 import Item from '../Components/Item/Item';
-
-const sortOptions = [
-    { value: 'featured', label: 'Featured' },
-    { value: 'price-low-high', label: 'Price: Low to High' },
-    { value: 'price-high-low', label: 'Price: High to Low' },
-    { value: 'newest', label: 'Newest' },
-    { value: 'name-az', label: 'Name: A-Z' }
-];
-
-const categoryFilters = [
-    { value: 'all', label: 'All Products' },
-    { value: 'living', label: 'Living Room' },
-    { value: 'bedroom', label: 'Bedroom' },
-    { value: 'dining', label: 'Dining' },
-    { value: 'decor', label: 'Decor' }
-];
+import { sortOptions, categoryFilters } from '../constants/productConstants';
 
 const ShopAll = () => {
     const { all_product } = useContext(ShopContext);

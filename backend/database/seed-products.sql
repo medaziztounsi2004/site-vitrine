@@ -43,9 +43,9 @@ INSERT INTO products (name, image, category, new_price, old_price, available) VA
 
 -- NEW PRODUCTS (6 additional products)
 INSERT INTO products (name, image, category, new_price, old_price, available) VALUES
-('Rattan Pendant Light', 'https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?auto=format&fit=crop&w=600&q=80', 'decor', 189.00, 239.00, true),
-('Linen Throw Pillows Set', 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80', 'living', 79.00, 99.00, true),
+('Rattan Pendant Light', 'https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=600&q=80', 'decor', 189.00, 239.00, true),
+('Linen Throw Pillows Set', 'https://images.unsplash.com/photo-1629949009765-40fc74c9ec21?auto=format&fit=crop&w=600&q=80', 'living', 79.00, 99.00, true),
 ('Marble Side Table', 'https://images.unsplash.com/photo-1611486212557-88be5ff6f941?auto=format&fit=crop&w=600&q=80', 'living', 349.00, 429.00, true),
 ('Woven Storage Baskets', 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80', 'decor', 69.00, 89.00, true),
-('Ceramic Table Lamp', 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80', 'bedroom', 159.00, 199.00, true),
-('Velvet Ottoman', 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80', 'living', 299.00, 379.00, true);
+('Ceramic Table Lamp', 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80', 'bedroom', 159.00, 199.00, true),
+('Velvet Ottoman', 'https://images.unsplash.com/photo-1558211583-d26f610c1eb1?auto=format&fit=crop&w=600&q=80', 'living', 299.00, 379.00, true);
