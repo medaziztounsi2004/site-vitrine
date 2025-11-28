@@ -8,8 +8,8 @@ const Hero = () => {
             {/* Background Image */}
             <div className="hero-background">
                 <img 
-                    src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1600" 
-                    alt="Luxury home interior" 
+                    src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=80" 
+                    alt="Modern living room interior" 
                 />
                 <div className="hero-overlay"></div>
             </div>
