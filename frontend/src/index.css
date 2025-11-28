@@ -1,19 +1,36 @@
+@import './styles/animations.css';
+
 :root {
+  /* Primary Colors */
   --sage-green: #5C7C5C;
   --sage-light: #E8F0E8;
+  --sage-dark: #4A6A4A;
   --deep-forest: #2D4A3E;
-  --cream: #FAF9F6;
+  
+  /* Accent Colors */
   --gold: #C9A962;
-  --white: #FFFFFF;
+  --gold-light: #E5D4A1;
+  --gold-dark: #A88B4A;
+  --terracotta: #C4A484;
+  --blush: #E8D5D5;
+  
+  /* Neutrals */
+  --cream: #FAF9F6;
+  --warm-white: #FEFDFB;
+  --stone: #E5E0DB;
   --charcoal: #333333;
+  --gray: #666666;
   --gray-light: #F5F5F5;
+  --white: #FFFFFF;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+  --shadow-xl: 0 16px 48px rgba(0,0,0,0.15);
   
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Inter', sans-serif;
-  
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
-  --shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
   
   --transition: all 0.3s ease;
 }

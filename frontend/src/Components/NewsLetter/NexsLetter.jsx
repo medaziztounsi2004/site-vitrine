@@ -5,8 +5,8 @@ const NewsLetter = () => {
     return (
         <div className='newsletter'>
             <div className="newsletter-content">
-                <h2>Join Our Community</h2>
-                <p>Subscribe to receive exclusive offers, design tips, and early access to new arrivals</p>
+                <h2>Join the SAGE & STONE Family</h2>
+                <p>Subscribe for exclusive offers and design inspiration</p>
                 <div className="newsletter-form">
                     <input type="email" placeholder='Enter your email' />
                     <button>Subscribe</button>

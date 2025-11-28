@@ -32,9 +32,8 @@ INSERT INTO products (name, image, category, new_price, old_price, available) VA
 ('Glass Pendant Light', 'https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?auto=format&fit=crop&w=800&q=80', 'dining', 329.00, 399.00, true),
 ('Table Runner', 'https://images.unsplash.com/photo-1449247709967-d4461a6a6103?auto=format&fit=crop&w=800&q=80', 'dining', 49.00, 69.00, true);
 
--- DECOR (7 products)
+-- DECOR (6 products)
 INSERT INTO products (name, image, category, new_price, old_price, available) VALUES
-('Ceramic Vase Set', 'https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?auto=format&fit=crop&w=800&q=80', 'decor', 89.00, 119.00, true),
 ('Monstera Plant', 'https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=800&q=80', 'decor', 79.00, 99.00, true),
 ('Abstract Wall Art', 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=800&q=80', 'decor', 199.00, 259.00, true),
 ('Scented Candle Set', 'https://images.unsplash.com/photo-1602028915047-37269d1a73f7?auto=format&fit=crop&w=800&q=80', 'decor', 49.00, 69.00, true),

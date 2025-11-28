@@ -48,7 +48,7 @@
 
 .newsletter-form button {
     padding: 18px 36px;
-    background: var(--sage-green);
+    background: var(--gold);
     color: var(--white);
     border: none;
     font-family: var(--font-body);
@@ -61,7 +61,7 @@
 }
 
 .newsletter-form button:hover {
-    background: var(--gold);
+    background: var(--gold-dark);
 }
 
 @media (max-width: 1024px) {

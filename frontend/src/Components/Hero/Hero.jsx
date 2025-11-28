@@ -17,9 +17,14 @@ const Hero = () => {
             <div className="hero-content">
                 <h1 className="hero-title">SAGE & STONE</h1>
                 <p className="hero-tagline">Elevate Your Space</p>
-                <Link to="/living" className="hero-cta">
-                    Shop Collection
-                </Link>
+                <div className="hero-buttons">
+                    <Link to="/living" className="hero-cta hero-cta-primary">
+                        Shop Collection
+                    </Link>
+                    <Link to="/#about" className="hero-cta hero-cta-outline">
+                        Our Story
+                    </Link>
+                </div>
             </div>
         </div>
     );
