@@ -1,13 +1,18 @@
 import './Navbar.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContext';
 import React, { useContext, useRef, useState, useEffect } from 'react';
+import SearchBar from '../SearchBar/SearchBar';
 
 const Navbar = () => {
     const [menu, setMenu] = useState("shop");
     const [scrolled, setScrolled] = useState(false);
     const { getTotalCartItems } = useContext(ShopContext);
     const menuRef = useRef();
+    const location = useLocation();
+    
+    // Check if current page is homepage (has hero image with transparent navbar)
+    const isHomepage = location.pathname === '/';
     
     useEffect(() => {
         const handleScroll = () => {
@@ -22,8 +27,19 @@ const Navbar = () => {
         e.target.classList.toggle('open');
     }
     
+    // Determine navbar class based on homepage status and scroll position
+    const getNavbarClass = () => {
+        let classes = 'navbar';
+        if (scrolled) {
+            classes += ' navbar-scrolled';
+        } else if (!isHomepage) {
+            classes += ' navbar-solid';
+        }
+        return classes;
+    };
+    
     return (
-        <div className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
+        <div className={getNavbarClass()}>
             <Link to='/' className="nav-logo" onClick={() => setMenu("shop")}>
                 <span className="logo-text">SAGE & STONE</span>
             </Link>
@@ -50,6 +66,7 @@ const Navbar = () => {
                 </li>
             </ul>
             <div className="nav-icons">
+                <SearchBar />
                 <div className="nav-login-cart">
                     <Link to='/cart' className="cart-link">
                         <svg className="cart-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

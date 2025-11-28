@@ -12,7 +12,8 @@
     transition: var(--transition);
 }
 
-.navbar-scrolled {
+.navbar-scrolled,
+.navbar-solid {
     background-color: var(--white);
     box-shadow: var(--shadow-sm);
 }
@@ -30,7 +31,8 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.navbar-scrolled .logo-text {
+.navbar-scrolled .logo-text,
+.navbar-solid .logo-text {
     color: var(--deep-forest);
     text-shadow: none;
 }
@@ -59,7 +61,8 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.navbar-scrolled .nav-menu a {
+.navbar-scrolled .nav-menu a,
+.navbar-solid .nav-menu a {
     color: var(--charcoal);
     text-shadow: none;
 }
@@ -94,7 +97,8 @@
     transition: var(--transition);
 }
 
-.navbar-scrolled .cart-link {
+.navbar-scrolled .cart-link,
+.navbar-solid .cart-link {
     color: var(--deep-forest);
 }
 
@@ -157,7 +161,8 @@
     transition: var(--transition);
 }
 
-.navbar-scrolled .nav-dropdown span {
+.navbar-scrolled .nav-dropdown span,
+.navbar-solid .nav-dropdown span {
     background: var(--deep-forest);
 }
 
