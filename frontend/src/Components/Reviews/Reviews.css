@@ -54,6 +54,27 @@
     background: var(--deep-forest);
 }
 
+/* Login Prompt */
+.login-prompt {
+    padding: 20px;
+    background: var(--sage-light);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 15px;
+    color: var(--charcoal);
+    margin-bottom: 30px;
+}
+
+.login-prompt a {
+    color: var(--sage-green);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-prompt a:hover {
+    text-decoration: underline;
+}
+
 /* Review Form */
 .review-form {
     background: var(--sage-light);

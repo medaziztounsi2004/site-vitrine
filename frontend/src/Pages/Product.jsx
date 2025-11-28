@@ -18,7 +18,7 @@ const Product = () => {
             <ProductDisplay product={product}/>
             <DescriptionBox />
             <Reviews productId={Number(productId)} />
-            <RelatedProducts/>
+            <RelatedProducts category={product?.category} currentProductId={Number(productId)} />
         </div>
     )
 }

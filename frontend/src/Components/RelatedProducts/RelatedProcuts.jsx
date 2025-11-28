@@ -3,10 +3,23 @@ import './RelatedProducts.css'
 import { ShopContext } from '../../Context/ShopContext';
 import Item from '../Item/Item';
 
-const RelatedProducts = () => {
+const RelatedProducts = ({ category, currentProductId }) => {
     const { all_product } = useContext(ShopContext);
-    // Show first 4 products as related products
-    const relatedProducts = all_product.slice(0, 4);
+    
+    // Handle case where products are not yet loaded
+    if (!all_product || all_product.length === 0) {
+        return null;
+    }
+    
+    // Filter products by same category and exclude current product
+    const relatedProducts = all_product
+        .filter(p => p.category === category && p.id !== currentProductId)
+        .slice(0, 4);
+
+    // If not enough products in same category, show nothing or fewer
+    if (relatedProducts.length === 0) {
+        return null;
+    }
 
     return (
         <div className='relatedproducts'>

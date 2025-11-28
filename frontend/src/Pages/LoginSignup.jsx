@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './CSS/LoginSignup.css';
 
 const LoginSignup = () => {
-
+    const location = useLocation();
     const [state,setState]=useState("Login");
     const [formData,setFormData]=useState({
         username:"",
@@ -10,6 +11,16 @@ const LoginSignup = () => {
         email:""
     });
     const [showPassword, setShowPassword] = useState(false);
+
+    // Pre-fill email and switch to sign up if coming from newsletter
+    useEffect(() => {
+        if (location.state?.email) {
+            setFormData(prev => ({...prev, email: location.state.email}));
+        }
+        if (location.state?.isSignUp) {
+            setState("Sign Up");
+        }
+    }, [location.state]);
 
     const changeHandler =(e)=>{
         setFormData({...formData,[e.target.name]:e.target.value})

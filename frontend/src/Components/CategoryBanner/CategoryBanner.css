@@ -37,6 +37,17 @@
     gap: 25px;
 }
 
+/* Floating animation keyframes */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
 .category-card {
     position: relative;
     height: 400px;
@@ -44,6 +55,15 @@
     overflow: hidden;
     text-decoration: none;
     display: block;
+    animation: float 6s ease-in-out infinite;
+}
+
+.category-card:nth-child(2) { animation-delay: 1s; }
+.category-card:nth-child(3) { animation-delay: 2s; }
+.category-card:nth-child(4) { animation-delay: 3s; }
+
+.category-card:hover {
+    animation-play-state: paused;
 }
 
 .category-card img {
