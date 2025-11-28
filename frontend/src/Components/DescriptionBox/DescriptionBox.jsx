@@ -19,18 +19,20 @@ const DescriptionBox = ({ reviewCount = 0, reviews = [], onWriteReview }) => {
     return (
         <div className="descriptionbox">
             <div className="descriptionbox-navigator">
-                <div 
+                <button 
                     className={`description-nav-box ${activeTab === 'description' ? 'active' : ''}`}
                     onClick={() => setActiveTab('description')}
+                    type="button"
                 >
                     Description
-                </div>
-                <div 
+                </button>
+                <button 
                     className={`description-nav-box ${activeTab === 'reviews' ? 'active' : ''}`}
                     onClick={() => setActiveTab('reviews')}
+                    type="button"
                 >
                     Reviews ({reviewCount})
-                </div>
+                </button>
             </div>
             
             <div className="descriptionbox-content">

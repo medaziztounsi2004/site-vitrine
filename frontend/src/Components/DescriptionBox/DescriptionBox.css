@@ -6,29 +6,35 @@
 
 .descriptionbox-navigator {
   display: flex;
-  gap: 0;
-  border-bottom: 1px solid #eee;
+  gap: 12px;
   margin-bottom: 30px;
 }
 
 .description-nav-box {
-  padding: 15px 30px;
-  font-size: 15px;
+  padding: 14px 28px;
+  font-size: 14px;
   font-weight: 500;
-  color: #666;
+  color: var(--charcoal, #333);
   cursor: pointer;
   transition: var(--transition);
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
+  background: var(--sage-light, #f5f7f5);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: var(--font-body);
 }
 
 .description-nav-box:hover {
-  color: var(--sage-green);
+  background: var(--sage-green, #5C7C5C);
+  color: var(--white, #fff);
+  border-color: var(--sage-green, #5C7C5C);
 }
 
 .description-nav-box.active {
-  color: var(--deep-forest);
-  border-bottom-color: var(--sage-green);
+  background: var(--sage-green, #5C7C5C);
+  color: var(--white, #fff);
+  border-color: var(--sage-green, #5C7C5C);
 }
 
 .descriptionbox-description p {
