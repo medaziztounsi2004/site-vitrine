@@ -66,11 +66,16 @@
     text-transform: uppercase;
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .hero-cta {
     display: inline-block;
     padding: 18px 48px;
-    background: var(--sage-green);
-    color: var(--white);
     font-family: var(--font-body);
     font-size: 16px;
     font-weight: 500;
@@ -81,8 +86,28 @@
     transition: var(--transition);
 }
 
-.hero-cta:hover {
+.hero-cta-primary {
+    background: var(--sage-green);
+    color: var(--white);
+    border: 2px solid var(--sage-green);
+}
+
+.hero-cta-primary:hover {
     background: var(--deep-forest);
+    border-color: var(--deep-forest);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.hero-cta-outline {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.hero-cta-outline:hover {
+    background: var(--white);
+    color: var(--charcoal);
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
 }

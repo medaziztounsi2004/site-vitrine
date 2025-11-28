@@ -8,8 +8,8 @@ const Item = (props) => {
   const discount = props.old_price ? Math.round((1 - props.new_price / props.old_price) * 100) : 0;
 
   return (
-      <div className='item'>
-        <div className="item-image-container">
+      <div className='item hover-scale'>
+        <div className="item-image-container img-zoom">
           <Link to={`/product/${props.id}`}>
             <img onClick={() => window.scrollTo(0,0)} src={props.image} alt={props.name} />
           </Link>

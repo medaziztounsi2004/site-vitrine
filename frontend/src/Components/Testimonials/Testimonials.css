@@ -1,0 +1,128 @@
+.testimonials {
+    background: var(--cream);
+    padding: 100px 60px;
+}
+
+.testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonials-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.testimonials-label {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--sage-green);
+    margin-bottom: 15px;
+}
+
+.testimonials-header h2 {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin: 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.testimonial-stars {
+    color: var(--gold);
+    font-size: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.testimonial-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--charcoal);
+    margin: 0 0 20px 0;
+    font-style: italic;
+}
+
+.testimonial-author {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--sage-green);
+}
+
+@media (max-width: 1024px) {
+    .testimonials {
+        padding: 80px 40px;
+    }
+
+    .testimonials-header h2 {
+        font-size: 30px;
+    }
+
+    .testimonials-grid {
+        gap: 25px;
+    }
+
+    .testimonial-card {
+        padding: 35px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials {
+        padding: 60px 30px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .testimonials-header h2 {
+        font-size: 26px;
+    }
+
+    .testimonial-text {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    .testimonials {
+        padding: 50px 20px;
+    }
+
+    .testimonials-header {
+        margin-bottom: 40px;
+    }
+
+    .testimonials-header h2 {
+        font-size: 22px;
+    }
+
+    .testimonial-card {
+        padding: 30px 20px;
+    }
+}
