@@ -1,62 +1,70 @@
 .descriptionbox {
-    margin: 60px auto;
-    max-width: 800px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #f8f8f8;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.descriptionbox-navigator {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 30px;
+}
+
+.description-nav-box {
+  padding: 15px 30px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  transition: var(--transition);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.description-nav-box:hover {
+  color: var(--sage-green);
+}
+
+.description-nav-box.active {
+  color: var(--deep-forest);
+  border-bottom-color: var(--sage-green);
+}
+
+.descriptionbox-description p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.descriptionbox-description p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .descriptionbox {
+    margin: 40px auto;
   }
-  
-  .discriptionbox-navigator {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
+
   .description-nav-box {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: 600;
-    color: #555;
-    border-radius: 8px;
-    background-color: #ffffff;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+    padding: 12px 20px;
+    font-size: 14px;
   }
-  
-  .description-nav-box.fade {
-    background: #fbfbfb;
-    color: #888;
-  }
-  
+
   .descriptionbox-description p {
-    line-height: 1.6;
+    font-size: 14px;
   }
-  
-  @media (max-width: 768px) {
-    .descriptionbox {
-      padding: 15px;
-    }
-    .description-nav-box {
-      font-size: 16px;
-    }
-    .descriptionbox-description p {
-      font-size: 14px;
-    }
+}
+
+@media (max-width: 500px) {
+  .description-nav-box {
+    padding: 10px 15px;
+    font-size: 13px;
   }
-  
-  @media (max-width: 480px) {
-    .descriptionbox {
-      margin: 40px auto;
-    }
-    .description-nav-box {
-      font-size: 14px;
-    }
-    .descriptionbox-description p {
-      font-size: 10px;
-    }
+
+  .descriptionbox-description p {
+    font-size: 13px;
   }
+}
   

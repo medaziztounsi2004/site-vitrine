@@ -14,7 +14,10 @@ const Popular = () => {
     
     return (
         <div className='popular'>
-            <h1>POPULAR </h1>
+            <div className="popular-header">
+                <h2>Featured Collection</h2>
+                <p>Discover our most loved pieces</p>
+            </div>
           
             <div className="popular-item">
                 {popularProducts.map((item,i)=>{

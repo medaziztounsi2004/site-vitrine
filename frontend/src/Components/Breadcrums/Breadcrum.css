@@ -1,56 +1,53 @@
 .breadcrum {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 120px 20px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.breadcrum-item {
+  color: #666;
+  font-size: 14px;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.breadcrum-item:hover:not(.breadcrum-current) {
+  color: var(--sage-green);
+}
+
+.breadcrum-current {
+  color: var(--charcoal);
+  font-weight: 500;
+}
+
+.breadcrum-separator {
+  color: #ccc;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .breadcrum {
+    padding: 100px 15px 15px;
+  }
+
+  .breadcrum-item,
+  .breadcrum-separator {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 500px) {
+  .breadcrum {
+    flex-wrap: wrap;
     gap: 8px;
-    color: #5e5e5e;
-    font-size: 16px;
-    font-weight: 600;
-    margin: 60px 170px;
-    text-transform: capitalize;
   }
-  
-  /* Adjustments for the arrow icon */
-  .arrowicon {
-    width: 16px; /* Default size */
+
+  .breadcrum-item,
+  .breadcrum-separator {
+    font-size: 12px;
   }
-  
-  @media (max-width: 1280px) {
-    .breadcrum {
-      margin: 30px 50px;
-      font-size: 14px;
-    }
-    .arrowicon {
-      width: 14px; /* Smaller size for max-width: 1280px */
-    }
-  }
-  
-  @media (max-width: 1024px) {
-    .breadcrum {
-      margin: 30px 30px;
-      font-size: 12px;
-    }
-    .arrowicon {
-      width: 7px; /* Smaller size for max-width: 1024px */
-    }
-  }
-  
-  @media (max-width: 800px) {
-    .breadcrum {
-      margin: 30px 10px;
-      font-size: 9px;
-    }
-    .arrowicon {
-      width: 5px; /* Smaller size for max-width: 800px */
-    }
-  }
-  
-  @media (max-width: 500px) {
-    .breadcrum {
-      justify-content: flex-end;
-      font-size: 8px;
-    }
-    .arrowicon {
-      width: 3px; /* Smallest size for max-width: 500px */
-    }
-  }
+}
   

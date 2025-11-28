@@ -1,18 +1,28 @@
 import React from 'react';
 import './Breadcrum.css';
-import arrow_icon from '../Assets/breadcrum_arrow.png';
+import { Link } from 'react-router-dom';
+
+const categoryNames = {
+  living: 'Living Room',
+  bedroom: 'Bedroom',
+  dining: 'Dining',
+  decor: 'Decor'
+};
 
 const Breadcrum = (props) => {
   const { product } = props;
+  
+  if (!product) return null;
+  
   return (
     <div className='breadcrum'>
-      <span className='breadcrum-item'>HOME</span>
-      <img src={arrow_icon} className='arrowicon' alt='' />
-      <span className='breadcrum-item'>SHOP</span>
-      <img src={arrow_icon} className='arrowicon' alt='' />
-      <span className='breadcrum-item'>{product.category}</span>
-      <img src={arrow_icon} className='arrowicon' alt='' />
-      <span className='breadcrum-item'>{product.name}</span>
+      <Link to='/' className='breadcrum-item'>Home</Link>
+      <span className='breadcrum-separator'>/</span>
+      <Link to={`/${product.category}`} className='breadcrum-item'>
+        {categoryNames[product.category] || product.category}
+      </Link>
+      <span className='breadcrum-separator'>/</span>
+      <span className='breadcrum-item breadcrum-current'>{product.name}</span>
     </div>
   );
 };

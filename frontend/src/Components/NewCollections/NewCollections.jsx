@@ -11,7 +11,10 @@ const NewCollections = () => {
     },[])
     return (
         <div className='new-collections'>
-            <h1>NEW COLLECTIONS</h1>
+            <div className="new-collections-header">
+                <h2>New Arrivals</h2>
+                <p>Fresh additions to elevate your home</p>
+            </div>
            
             <div className="collections">
                 {new_collection.map((item,i)=>{
