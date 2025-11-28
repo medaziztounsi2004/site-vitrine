@@ -1,12 +1,25 @@
 import React from 'react';
 import './DescriptionBox.css'
 
-const DescriptionBox = () => {
+const DescriptionBox = ({ reviewCount = 0 }) => {
+    const scrollToReviews = () => {
+        const reviewsSection = document.querySelector('.reviews-section');
+        if (reviewsSection) {
+            reviewsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <div className="descriptionbox">
             <div className="descriptionbox-navigator">
                 <div className="description-nav-box active">Description</div>
-                <div className="description-nav-box">Reviews (122)</div>
+                <div 
+                    className="description-nav-box" 
+                    onClick={scrollToReviews}
+                    style={{ cursor: 'pointer' }}
+                >
+                    Reviews ({reviewCount})
+                </div>
             </div>
             <div className="descriptionbox-description">
                 <p>

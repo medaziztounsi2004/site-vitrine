@@ -372,9 +372,7 @@ app.post('/reviews', async (req, res) => {
         if (typeof rating !== 'number' || rating < 1 || rating > 5) {
             return res.status(400).json({ error: 'Rating must be a number between 1 and 5' });
         }
-        if (!review_text || typeof review_text !== 'string' || !review_text.trim()) {
-            return res.status(400).json({ error: 'Review text is required' });
-        }
+        // review_text is optional - users can submit stars only
 
         const { data: newReview, error } = await supabase
             .from('reviews')
@@ -382,7 +380,7 @@ app.post('/reviews', async (req, res) => {
                 product_id,
                 user_name: user_name.trim(),
                 rating,
-                review_text: review_text.trim()
+                review_text: review_text ? review_text.trim() : ''
             }])
             .select()
             .single();

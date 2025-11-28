@@ -41,10 +41,11 @@ const Reviews = ({ productId }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        if (!newReview.user_name.trim() || !newReview.review_text.trim()) {
-            setError('Please fill in all fields');
+        if (!newReview.user_name.trim()) {
+            setError('Please enter your name');
             return;
         }
+        // review_text is optional - users can submit stars only
 
         if (!newReview.rating || newReview.rating < 1 || newReview.rating > 5) {
             setError('Please select a rating between 1 and 5 stars');
@@ -184,7 +185,6 @@ const Reviews = ({ productId }) => {
                 <p className="login-prompt">
                     Please <Link to="/login">login</Link> to submit a review
                 </p>
-            )}
             )}
 
             <div className="reviews-list">
