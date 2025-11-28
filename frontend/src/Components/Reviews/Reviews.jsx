@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Rating from '../Rating/Rating';
 import './Reviews.css';
 
-const Reviews = ({ productId }) => {
+const Reviews = ({ productId, onReviewAdded }) => {
     const [reviews, setReviews] = useState([]);
     const [loading, setLoading] = useState(true);
     const [showForm, setShowForm] = useState(false);
@@ -74,6 +74,7 @@ const Reviews = ({ productId }) => {
                 setNewReview({ user_name: '', rating: 5, review_text: '' });
                 setShowForm(false);
                 fetchReviews();
+                if (onReviewAdded) onReviewAdded();
             } else {
                 setError('Failed to submit review. Please try again.');
             }
