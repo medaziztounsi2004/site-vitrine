@@ -5,7 +5,6 @@ import './Reviews.css';
 
 const Reviews = ({ productId, onReviewAdded }) => {
     const [reviews, setReviews] = useState([]);
-    const [loading, setLoading] = useState(true);
     const [showForm, setShowForm] = useState(false);
     const [newReview, setNewReview] = useState({
         user_name: '',
@@ -20,7 +19,6 @@ const Reviews = ({ productId, onReviewAdded }) => {
 
     const fetchReviews = useCallback(async () => {
         try {
-            setLoading(true);
             const response = await fetch(`http://localhost:4000/reviews/${productId}`);
             if (response.ok) {
                 const data = await response.json();
@@ -28,8 +26,6 @@ const Reviews = ({ productId, onReviewAdded }) => {
             }
         } catch (err) {
             console.error('Error fetching reviews:', err);
-        } finally {
-            setLoading(false);
         }
     }, [productId]);
 
@@ -88,15 +84,6 @@ const Reviews = ({ productId, onReviewAdded }) => {
     const averageRating = reviews.length > 0 
         ? (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1)
         : 0;
-
-    const formatDate = (dateString) => {
-        const date = new Date(dateString);
-        return date.toLocaleDateString('en-US', { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-        });
-    };
 
     return (
         <div className="reviews-section">
@@ -187,27 +174,6 @@ const Reviews = ({ productId, onReviewAdded }) => {
                     Please <Link to="/login">login</Link> to submit a review
                 </p>
             )}
-
-            <div className="reviews-list">
-                {loading ? (
-                    <p className="reviews-loading">Loading reviews...</p>
-                ) : reviews.length > 0 ? (
-                    reviews.map((review) => (
-                        <div key={review.id} className="review-item">
-                            <div className="review-header">
-                                <div className="reviewer-info">
-                                    <span className="reviewer-name">{review.user_name}</span>
-                                    <Rating rating={review.rating} size="small" />
-                                </div>
-                                <span className="review-date">{formatDate(review.created_at)}</span>
-                            </div>
-                            <p className="review-text">{review.review_text}</p>
-                        </div>
-                    ))
-                ) : (
-                    <p className="no-reviews">No reviews yet. Be the first to review this product!</p>
-                )}
-            </div>
         </div>
     );
 };
