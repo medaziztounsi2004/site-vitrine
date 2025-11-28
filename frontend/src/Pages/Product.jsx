@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect, useRef, useCallback } from 'react';
 import { ShopContext } from '../Context/ShopContext';
 import { useParams } from 'react-router-dom';
+import API_URL from '../config/api';
 import Breadcrum from '../Components/Breadcrums/Breadcrum';
 import ProductDisplay from '../Components/ProductDisplay/ProductDisplay';
 import DescriptionBox from '../Components/DescriptionBox/DescriptionBox';
@@ -19,7 +20,7 @@ const Product = () => {
     // Fetch reviews and count
     const fetchReviewData = useCallback(async () => {
         try {
-            const response = await fetch(`http://localhost:4000/reviews/${productId}`);
+            const response = await fetch(`${API_URL}/reviews/${productId}`);
             if (response.ok) {
                 const data = await response.json();
                 setReviews(data || []);

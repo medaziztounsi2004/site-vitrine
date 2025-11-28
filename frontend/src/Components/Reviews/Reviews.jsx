@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import Rating from '../Rating/Rating';
 import './Reviews.css';
+import API_URL from '../../config/api';
 
 const Reviews = ({ productId, onReviewAdded }) => {
     const [reviews, setReviews] = useState([]);
@@ -19,7 +20,7 @@ const Reviews = ({ productId, onReviewAdded }) => {
 
     const fetchReviews = useCallback(async () => {
         try {
-            const response = await fetch(`http://localhost:4000/reviews/${productId}`);
+            const response = await fetch(`${API_URL}/reviews/${productId}`);
             if (response.ok) {
                 const data = await response.json();
                 setReviews(data);
@@ -52,7 +53,7 @@ const Reviews = ({ productId, onReviewAdded }) => {
         setError('');
 
         try {
-            const response = await fetch('http://localhost:4000/reviews', {
+            const response = await fetch(`${API_URL}/reviews`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
