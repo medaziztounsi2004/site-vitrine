@@ -27,9 +27,22 @@ const Checkout = () => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
+        // Map field names to state keys
+        const fieldMap = {
+            'checkout_first_name_field': 'firstName',
+            'checkout_last_name_field': 'lastName',
+            'checkout_email_field': 'email',
+            'checkout_phone_field': 'phone',
+            'checkout_address_field': 'address',
+            'checkout_city_field': 'city',
+            'checkout_state_field': 'state',
+            'checkout_zip_field': 'zipCode',
+            'checkout_country_field': 'country'
+        };
+        const stateKey = fieldMap[name] || name;
         setFormData(prev => ({
             ...prev,
-            [name]: value
+            [stateKey]: value
         }));
     };
 
@@ -71,7 +84,7 @@ const Checkout = () => {
             
             <div className="checkout-container">
                 <div className="checkout-form-section">
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} autoComplete="off" data-form-type="other">
                         <div className="form-section">
                             <h2>Contact Information</h2>
                             <div className="form-row">
@@ -80,7 +93,8 @@ const Checkout = () => {
                                     <input 
                                         type="text" 
                                         id="firstName" 
-                                        name="firstName"
+                                        name="checkout_first_name_field"
+                                        autoComplete="new-password"
                                         value={formData.firstName}
                                         onChange={handleInputChange}
                                         required 
@@ -91,7 +105,8 @@ const Checkout = () => {
                                     <input 
                                         type="text" 
                                         id="lastName" 
-                                        name="lastName"
+                                        name="checkout_last_name_field"
+                                        autoComplete="new-password"
                                         value={formData.lastName}
                                         onChange={handleInputChange}
                                         required 
@@ -104,7 +119,8 @@ const Checkout = () => {
                                     <input 
                                         type="email" 
                                         id="email" 
-                                        name="email"
+                                        name="checkout_email_field"
+                                        autoComplete="new-password"
                                         value={formData.email}
                                         onChange={handleInputChange}
                                         required 
@@ -115,7 +131,8 @@ const Checkout = () => {
                                     <input 
                                         type="tel" 
                                         id="phone" 
-                                        name="phone"
+                                        name="checkout_phone_field"
+                                        autoComplete="new-password"
                                         value={formData.phone}
                                         onChange={handleInputChange}
                                         required 
@@ -131,7 +148,8 @@ const Checkout = () => {
                                 <input 
                                     type="text" 
                                     id="address" 
-                                    name="address"
+                                    name="checkout_address_field"
+                                    autoComplete="new-password"
                                     value={formData.address}
                                     onChange={handleInputChange}
                                     required 
@@ -143,7 +161,8 @@ const Checkout = () => {
                                     <input 
                                         type="text" 
                                         id="city" 
-                                        name="city"
+                                        name="checkout_city_field"
+                                        autoComplete="new-password"
                                         value={formData.city}
                                         onChange={handleInputChange}
                                         required 
@@ -154,7 +173,8 @@ const Checkout = () => {
                                     <input 
                                         type="text" 
                                         id="state" 
-                                        name="state"
+                                        name="checkout_state_field"
+                                        autoComplete="new-password"
                                         value={formData.state}
                                         onChange={handleInputChange}
                                         required 
@@ -167,7 +187,8 @@ const Checkout = () => {
                                     <input 
                                         type="text" 
                                         id="zipCode" 
-                                        name="zipCode"
+                                        name="checkout_zip_field"
+                                        autoComplete="new-password"
                                         value={formData.zipCode}
                                         onChange={handleInputChange}
                                         required 
@@ -177,7 +198,8 @@ const Checkout = () => {
                                     <label htmlFor="country">Country *</label>
                                     <select 
                                         id="country" 
-                                        name="country"
+                                        name="checkout_country_field"
+                                        autoComplete="off"
                                         value={formData.country}
                                         onChange={handleInputChange}
                                         required

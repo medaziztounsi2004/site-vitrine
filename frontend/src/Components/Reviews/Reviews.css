@@ -1,0 +1,241 @@
+.reviews-section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.reviews-header {
+    margin-bottom: 30px;
+}
+
+.reviews-header h2 {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--deep-forest);
+    margin-bottom: 15px;
+}
+
+.reviews-summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.average-rating {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--charcoal);
+}
+
+.total-reviews {
+    font-size: 14px;
+    color: var(--gray);
+}
+
+/* Write Review Button */
+.write-review-btn {
+    padding: 14px 28px;
+    background: var(--sage-green);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 30px;
+}
+
+.write-review-btn:hover {
+    background: var(--deep-forest);
+}
+
+/* Review Form */
+.review-form {
+    background: var(--sage-light);
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.review-form h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--deep-forest);
+    margin-bottom: 24px;
+}
+
+.review-form .form-group {
+    margin-bottom: 20px;
+}
+
+.review-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 8px;
+}
+
+.review-form input,
+.review-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--charcoal);
+    background: var(--white);
+    outline: none;
+    transition: var(--transition);
+}
+
+.review-form input:focus,
+.review-form textarea:focus {
+    border-color: var(--sage-green);
+}
+
+.review-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.review-error {
+    color: #dc3545;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.cancel-btn,
+.submit-btn {
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cancel-btn {
+    background: transparent;
+    border: 1px solid #ddd;
+    color: var(--charcoal);
+}
+
+.cancel-btn:hover {
+    border-color: var(--charcoal);
+}
+
+.submit-btn {
+    background: var(--sage-green);
+    border: none;
+    color: var(--white);
+}
+
+.submit-btn:hover {
+    background: var(--deep-forest);
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Reviews List */
+.reviews-list {
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+}
+
+.reviews-loading,
+.no-reviews {
+    text-align: center;
+    color: var(--gray);
+    font-size: 14px;
+    padding: 40px 0;
+}
+
+.review-item {
+    padding: 24px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.review-item:last-child {
+    border-bottom: none;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.reviewer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.reviewer-name {
+    font-weight: 500;
+    color: var(--charcoal);
+    font-size: 15px;
+}
+
+.review-date {
+    font-size: 13px;
+    color: var(--gray);
+}
+
+.review-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .reviews-section {
+        margin: 40px auto;
+    }
+
+    .reviews-header h2 {
+        font-size: 24px;
+    }
+
+    .reviews-summary {
+        flex-wrap: wrap;
+    }
+
+    .review-form {
+        padding: 20px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .cancel-btn,
+    .submit-btn {
+        width: 100%;
+    }
+
+    .review-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+}

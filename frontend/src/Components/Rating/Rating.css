@@ -1,0 +1,57 @@
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+}
+
+.stars.interactive svg {
+    cursor: pointer;
+}
+
+.stars.interactive svg:hover {
+    transform: scale(1.1);
+}
+
+.star-interactive {
+    transition: all 0.2s ease;
+}
+
+.star-interactive:focus {
+    outline: 2px solid var(--sage-green);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Size variants */
+.rating-small .stars svg {
+    width: 14px;
+    height: 14px;
+}
+
+.rating-medium .stars svg {
+    width: 18px;
+    height: 18px;
+}
+
+.rating-large .stars svg {
+    width: 24px;
+    height: 24px;
+}
+
+.rating-count {
+    font-size: 13px;
+    color: var(--gray);
+}
+
+.rating-small .rating-count {
+    font-size: 11px;
+}
+
+.rating-large .rating-count {
+    font-size: 14px;
+}

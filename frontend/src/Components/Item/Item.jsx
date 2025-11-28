@@ -1,11 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import './Item.css'
 import { Link } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContext';
+import Rating from '../Rating/Rating';
 
 const Item = (props) => {
   const { addToCart } = useContext(ShopContext);
   const discount = props.old_price ? Math.round((1 - props.new_price / props.old_price) * 100) : 0;
+  const [ratingData, setRatingData] = useState({ average: 0, count: 0 });
+
+  useEffect(() => {
+    fetch(`http://localhost:4000/reviews/${props.id}/average`)
+      .then(res => res.json())
+      .then(data => setRatingData(data))
+      .catch(() => setRatingData({ average: 0, count: 0 }));
+  }, [props.id]);
 
   return (
       <div className='item hover-scale'>
@@ -20,6 +29,12 @@ const Item = (props) => {
         </div>
         <div className="item-details">
           <p className="item-name">{props.name}</p>
+          <Rating 
+            rating={Math.round(Number(ratingData.average))} 
+            size="small" 
+            showCount={true} 
+            count={ratingData.count} 
+          />
           <div className="item-prices">
             <span className="item-price-new">${props.new_price}</span>
             {props.old_price && props.old_price > props.new_price && (

@@ -49,3 +49,16 @@ INSERT INTO products (name, image, category, new_price, old_price, available) VA
 ('Woven Storage Baskets', 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80', 'decor', 69.00, 89.00, true),
 ('Ceramic Table Lamp', 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80', 'bedroom', 159.00, 199.00, true),
 ('Velvet Ottoman', 'https://images.unsplash.com/photo-1558211583-d26f610c1eb1?auto=format&fit=crop&w=600&q=80', 'living', 299.00, 379.00, true);
+
+-- ADDITIONAL 10 NEW PRODUCTS (as requested)
+INSERT INTO products (name, image, category, new_price, old_price, available) VALUES
+('Jute Area Rug', 'https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&w=600&q=80', 'living', 349.00, 449.00, true),
+('Ceramic Plant Pots Set', 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=600&q=80', 'decor', 99.00, 129.00, true),
+('Velvet Bed Frame Queen', 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80', 'bedroom', 999.00, 1299.00, true),
+('Teak Dining Chairs Set', 'https://images.unsplash.com/photo-1551298370-9d3d53bc4f42?auto=format&fit=crop&w=600&q=80', 'dining', 699.00, 899.00, true),
+('Brass Wall Mirror', 'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=600&q=80', 'decor', 259.00, 329.00, true),
+('Scented Candle Collection', 'https://images.unsplash.com/photo-1602607726786-63e0f43ce58d?auto=format&fit=crop&w=600&q=80', 'decor', 59.00, 79.00, true),
+('Nightstand with Drawer', 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?auto=format&fit=crop&w=600&q=80', 'bedroom', 279.00, 349.00, true),
+('Modern Console Table', 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80', 'living', 449.00, 549.00, true),
+('Bamboo Room Divider', 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=600&q=80', 'decor', 329.00, 399.00, true),
+('Rustic Dining Bench', 'https://images.unsplash.com/photo-1551298370-9d3d53bc4f42?auto=format&fit=crop&w=600&q=80', 'dining', 399.00, 499.00, true);

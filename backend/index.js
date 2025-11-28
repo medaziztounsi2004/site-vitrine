@@ -333,6 +333,92 @@ app.post('/getcart', fetchUser, async (req, res) => {
     }
 });
 
+// ================== REVIEWS API ==================
+
+// Get reviews for a product
+app.get('/reviews/:productId', async (req, res) => {
+    try {
+        const { productId } = req.params;
+        
+        const { data: reviews, error } = await supabase
+            .from('reviews')
+            .select('*')
+            .eq('product_id', productId)
+            .order('created_at', { ascending: false });
+
+        if (error) {
+            return res.status(500).json({ error: error.message });
+        }
+
+        console.log(`Reviews fetched for product ${productId}`);
+        res.json(reviews || []);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Add a new review
+app.post('/reviews', async (req, res) => {
+    try {
+        const { product_id, user_name, rating, review_text } = req.body;
+
+        // Validate input
+        if (!product_id || !user_name || !rating || !review_text) {
+            return res.status(400).json({ error: 'All fields are required' });
+        }
+
+        if (rating < 1 || rating > 5) {
+            return res.status(400).json({ error: 'Rating must be between 1 and 5' });
+        }
+
+        const { data: newReview, error } = await supabase
+            .from('reviews')
+            .insert([{
+                product_id,
+                user_name,
+                rating,
+                review_text
+            }])
+            .select()
+            .single();
+
+        if (error) {
+            console.log("Error adding review:", error);
+            return res.status(500).json({ error: error.message });
+        }
+
+        console.log("Review added successfully");
+        res.status(201).json(newReview);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Get average rating for a product
+app.get('/reviews/:productId/average', async (req, res) => {
+    try {
+        const { productId } = req.params;
+        
+        const { data: reviews, error } = await supabase
+            .from('reviews')
+            .select('rating')
+            .eq('product_id', productId);
+
+        if (error) {
+            return res.status(500).json({ error: error.message });
+        }
+
+        if (!reviews || reviews.length === 0) {
+            return res.json({ average: 0, count: 0 });
+        }
+
+        const average = reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
+        res.json({ average: average.toFixed(1), count: reviews.length });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
 app.listen(port, (error) => {
     if (!error) {
         console.log('Server Running on Port ' + port);

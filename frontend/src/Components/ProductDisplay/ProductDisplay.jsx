@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import './ProductDisplay.css'
 import { ShopContext } from '../../Context/ShopContext';
+import Rating from '../Rating/Rating';
 
 const categoryNames = {
     living: 'Living Room',
@@ -12,6 +13,16 @@ const categoryNames = {
 const ProductDisplay = (props) => {
     const {product} = props;
     const {addToCart} = useContext(ShopContext);
+    const [ratingData, setRatingData] = useState({ average: 0, count: 0 });
+    
+    useEffect(() => {
+        if (product?.id) {
+            fetch(`http://localhost:4000/reviews/${product.id}/average`)
+                .then(res => res.json())
+                .then(data => setRatingData(data))
+                .catch(() => setRatingData({ average: 0, count: 0 }));
+        }
+    }, [product?.id]);
     
     if (!product) {
         return <div className="productdisplay-loading">Loading...</div>;
@@ -33,14 +44,12 @@ const ProductDisplay = (props) => {
             <div className="productdisplay-right">
                 <h1>{product.name}</h1>
                 <div className="productdisplay-right-stars">
-                    <div className="stars">
-                        {[1,2,3,4,5].map((star) => (
-                            <svg key={star} viewBox="0 0 24 24" fill={star <= 4 ? "var(--gold)" : "#ddd"}>
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                            </svg>
-                        ))}
-                    </div>
-                    <p>(122 reviews)</p>
+                    <Rating 
+                        rating={Math.round(Number(ratingData.average))} 
+                        size="medium" 
+                        showCount={true} 
+                        count={ratingData.count} 
+                    />
                 </div>
                 <div className="productdisplay-right-prices">
                     <div className="productdisplay-right-price-new">${product.new_price}</div>
