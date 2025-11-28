@@ -65,6 +65,9 @@ const Footer = () => {
             <div className="footer-bottom">
                 <hr />
                 <p>© 2025 SAGE & STONE. All rights reserved.</p>
+                <p className="footer-developer">
+                    Developed by <a href="https://aziz-tounsi.github.io/" target="_blank" rel="noopener noreferrer">Aziz Tounsi</a>
+                </p>
             </div>
         </footer>
     )

@@ -25,12 +25,14 @@
     font-family: var(--font-heading);
     font-size: 24px;
     font-weight: 600;
-    color: var(--deep-forest);
+    color: var(--white);
     letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-scrolled .logo-text {
     color: var(--deep-forest);
+    text-shadow: none;
 }
 
 .nav-menu {
@@ -48,16 +50,18 @@
 }
 
 .nav-menu a {
-    color: var(--deep-forest);
+    color: var(--white);
     font-family: var(--font-body);
     font-size: 15px;
     font-weight: 500;
     text-decoration: none;
     transition: var(--transition);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-scrolled .nav-menu a {
     color: var(--charcoal);
+    text-shadow: none;
 }
 
 .nav-menu a:hover {
@@ -86,8 +90,12 @@
 .cart-link {
     display: flex;
     align-items: center;
-    color: var(--deep-forest);
+    color: var(--white);
     transition: var(--transition);
+}
+
+.navbar-scrolled .cart-link {
+    color: var(--deep-forest);
 }
 
 .cart-link:hover {
@@ -145,8 +153,12 @@
 .nav-dropdown span {
     width: 25px;
     height: 2px;
-    background: var(--deep-forest);
+    background: var(--white);
     transition: var(--transition);
+}
+
+.navbar-scrolled .nav-dropdown span {
+    background: var(--deep-forest);
 }
 
 .nav-dropdown.open span:nth-child(1) {

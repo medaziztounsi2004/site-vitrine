@@ -27,8 +27,8 @@ INSERT INTO products (name, image, category, new_price, old_price, available) VA
 -- DINING (5 products)
 INSERT INTO products (name, image, category, new_price, old_price, available) VALUES
 ('Marble Dining Table', 'https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=800&q=80', 'dining', 1499.00, 1899.00, true),
-('Wishbone Dining Chairs', 'https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=800&q=80', 'dining', 599.00, 749.00, true),
-('Ceramic Dinnerware Set', 'https://images.unsplash.com/photo-1603199506016-5f36e6d72d31?auto=format&fit=crop&w=800&q=80', 'dining', 149.00, 199.00, true),
+('Wishbone Chairs Set', 'https://images.unsplash.com/photo-1551298370-9d3d53bc4f42?auto=format&fit=crop&w=600&q=80', 'dining', 599.00, 749.00, true),
+('Ceramic Dinnerware Set', 'https://images.unsplash.com/photo-1603199506016-b9a594b593c0?auto=format&fit=crop&w=600&q=80', 'dining', 149.00, 199.00, true),
 ('Glass Pendant Light', 'https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?auto=format&fit=crop&w=800&q=80', 'dining', 329.00, 399.00, true),
 ('Table Runner', 'https://images.unsplash.com/photo-1449247709967-d4461a6a6103?auto=format&fit=crop&w=800&q=80', 'dining', 49.00, 69.00, true);
 
@@ -40,3 +40,12 @@ INSERT INTO products (name, image, category, new_price, old_price, available) VA
 ('Woven Basket Set', 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80', 'decor', 79.00, 99.00, true),
 ('Decorative Throw Blanket', 'https://images.unsplash.com/photo-1580301762395-21ce84d00bc6?auto=format&fit=crop&w=800&q=80', 'decor', 119.00, 149.00, true),
 ('Macrame Wall Hanging', 'https://images.unsplash.com/photo-1522758971460-1d21eed7dc1d?auto=format&fit=crop&w=800&q=80', 'decor', 69.00, 89.00, true);
+
+-- NEW PRODUCTS (6 additional products)
+INSERT INTO products (name, image, category, new_price, old_price, available) VALUES
+('Rattan Pendant Light', 'https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=600&q=80', 'decor', 189.00, 239.00, true),
+('Linen Throw Pillows Set', 'https://images.unsplash.com/photo-1629949009765-40fc74c9ec21?auto=format&fit=crop&w=600&q=80', 'living', 79.00, 99.00, true),
+('Marble Side Table', 'https://images.unsplash.com/photo-1611486212557-88be5ff6f941?auto=format&fit=crop&w=600&q=80', 'living', 349.00, 429.00, true),
+('Woven Storage Baskets', 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80', 'decor', 69.00, 89.00, true),
+('Ceramic Table Lamp', 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80', 'bedroom', 159.00, 199.00, true),
+('Velvet Ottoman', 'https://images.unsplash.com/photo-1558211583-d26f610c1eb1?auto=format&fit=crop&w=600&q=80', 'living', 299.00, 379.00, true);
