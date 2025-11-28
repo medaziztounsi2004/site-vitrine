@@ -3,6 +3,7 @@ import './Item.css'
 import { Link } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContext';
 import Rating from '../Rating/Rating';
+import API_URL from '../../config/api';
 
 const Item = (props) => {
   const { addToCart } = useContext(ShopContext);
@@ -10,7 +11,7 @@ const Item = (props) => {
   const [ratingData, setRatingData] = useState({ average: 0, count: 0 });
 
   useEffect(() => {
-    fetch(`http://localhost:4000/reviews/${props.id}/average`)
+    fetch(`${API_URL}/reviews/${props.id}/average`)
       .then(res => res.json())
       .then(data => setRatingData(data))
       .catch(() => setRatingData({ average: 0, count: 0 }));
