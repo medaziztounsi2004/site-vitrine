@@ -1,8 +1,6 @@
 -- SAGE & STONE Home Decor Products Seed Data
 -- Run this SQL to populate the products table with home decor items
-
--- Clear existing products (optional - uncomment if needed)
--- DELETE FROM products;
+-- NOTE: This will ADD products to existing data. To start fresh, manually delete existing products first.
 
 -- Living Room Products
 INSERT INTO products (name, image, category, new_price, old_price, available) VALUES
