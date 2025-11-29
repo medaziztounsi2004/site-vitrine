@@ -83,6 +83,13 @@
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+/* Make stats numbers green */
+.about-stats .stat-number,
+.stats-section .stat-number,
+.stat-value,
+.about-stat-number {
+    color: #5C7C5C !important;
+}
 
 @media (max-width: 1024px) {
     .about {
