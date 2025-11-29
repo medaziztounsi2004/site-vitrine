@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import './ProductDisplay.css'
 import { ShopContext } from '../../Context/ShopContext';
 import Rating from '../Rating/Rating';
+import API_URL from '../../config/api';
 
 const categoryNames = {
     living: 'Living Room',
@@ -17,7 +18,7 @@ const ProductDisplay = (props) => {
     
     useEffect(() => {
         if (product?.id) {
-            fetch(`http://localhost:4000/reviews/${product.id}/average`)
+            fetch(`${API_URL}/reviews/${product.id}/average`)
                 .then(res => res.json())
                 .then(data => setRatingData(data))
                 .catch(() => setRatingData({ average: 0, count: 0 }));

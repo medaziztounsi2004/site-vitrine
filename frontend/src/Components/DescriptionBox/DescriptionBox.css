@@ -6,29 +6,35 @@
 
 .descriptionbox-navigator {
   display: flex;
-  gap: 0;
-  border-bottom: 1px solid #eee;
+  gap: 12px;
   margin-bottom: 30px;
 }
 
 .description-nav-box {
-  padding: 15px 30px;
-  font-size: 15px;
+  padding: 14px 28px;
+  font-size: 14px;
   font-weight: 500;
-  color: #666;
+  color: var(--charcoal, #333);
   cursor: pointer;
   transition: var(--transition);
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
+  background: var(--sage-light, #f5f7f5);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: var(--font-body);
 }
 
 .description-nav-box:hover {
-  color: var(--sage-green);
+  background: var(--sage-green, #5C7C5C);
+  color: var(--white, #fff);
+  border-color: var(--sage-green, #5C7C5C);
 }
 
 .description-nav-box.active {
-  color: var(--deep-forest);
-  border-bottom-color: var(--sage-green);
+  background: var(--sage-green, #5C7C5C);
+  color: var(--white, #fff);
+  border-color: var(--sage-green, #5C7C5C);
 }
 
 .descriptionbox-description p {
@@ -143,5 +149,82 @@
   .descriptionbox-description p {
     font-size: 13px;
   }
+}
+
+/* Reviews Tab Content */
+.descriptionbox-content {
+    min-height: 200px;
+}
+
+.descriptionbox-reviews {
+    padding: 10px 0;
+}
+
+.reviews-list-tab {
+    margin-bottom: 24px;
+}
+
+.review-item-tab {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.review-item-tab:last-child {
+    border-bottom: none;
+}
+
+.review-header-tab {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.reviewer-info-tab {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.reviewer-name-tab {
+    font-weight: 600;
+    color: var(--charcoal, #333);
+    font-size: 15px;
+}
+
+.review-date-tab {
+    font-size: 13px;
+    color: var(--gray, #888);
+}
+
+.review-text-tab {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--charcoal, #333);
+    margin-top: 8px;
+}
+
+.no-reviews-tab {
+    text-align: center;
+    color: var(--gray, #888);
+    padding: 40px 0;
+    font-size: 14px;
+}
+
+.write-review-btn-tab {
+    background: var(--sage-green, #5C7C5C);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.write-review-btn-tab:hover {
+    background: var(--deep-forest, #3D5A3D);
 }
   

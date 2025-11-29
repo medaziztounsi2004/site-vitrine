@@ -11,10 +11,7 @@ const port = process.env.PORT || 4000;
 const JWT_SECRET = process.env.JWT_SECRET || 'secret_ecom';
 
 app.use(express.json());
-app.use(cors({
-    origin: ['http://localhost:3000', 'https://your-frontend-url.vercel.app'],
-    credentials: true
-}));
+app.use(cors());
 
 // API creation
 app.get("/", (req, res) => {
